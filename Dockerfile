@@ -17,4 +17,6 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY supervisor-sshd.conf /etc/supervisor/conf.d/sshd.conf
 #COPY supervisor-vncd.conf /etc/supervisor/conf.d/vncd.conf
 
+VOLUME ["/mnt/persist"]
+
 ENTRYPOINT ["/start"]

@@ -16,8 +16,9 @@ chmod 600 /home/${_IMG_USERNAME}/.vnc/passwd
 
 su -c "vncserver -geometry 1280x800 :0" $_IMG_USERNAME
 
-if [ -x "/home/${_IMG_USERNAME}/.setup.sh" ] ; then
-	/home/${_IMG_USERNAME}/.setup.sh &
+if [ -x "/mnt/persist/setup.sh" ] ; then
+    /mnt/persist/setup.sh &
+    sleep 5
 fi
 
 supervisord
